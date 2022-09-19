@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Proximanova';
+  font-weight: 400;
+  src: local('Proximanova'), url(./fonts/proximanova_regular.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'ProximanovaBold';
+  font-weight: 700;
+  src: local('ProximanovaBold'), url(./fonts/proximanova_bold.otf) format('opentype');
+}
+
+
+@font-face {
+  font-family: 'ProximanovaBlack';
+  font-weight: 900;
+  src: local('ProximanovaBlack'), url(./fonts/proximanova_black.otf) format('opentype');
+}

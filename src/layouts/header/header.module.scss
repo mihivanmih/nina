@@ -1,0 +1,71 @@
+@import "src/scss/variables";
+
+.header {
+  text-transform: uppercase;
+  padding-top: 25px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  align-items: center;
+
+  @include _350 {
+    flex-wrap: wrap;
+  }
+
+  @include _768 {
+    flex-wrap: nowrap;
+  }
+
+}
+
+
+.logo{
+  @include _350 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  @include _768 {
+    display: flex;
+    flex-wrap: nowrap;
+    width: auto;
+  }
+
+  & a {
+    font-family: "ProximanovaBold", serif;
+    font-size: 30px;
+    line-height: 38px;
+    color: $color;
+    text-decoration: none;
+
+    @include _350 {
+      width: 100%;
+    }
+
+    @include _768 {
+      width: auto;
+    }
+
+  }
+
+}
+
+.line {
+  width: 2px;
+  margin: 0 18px;
+  height: 35px;
+  background: #fff;
+
+  @include _350 {
+    display: none;
+  }
+
+  @include _768 {
+    display: flex;
+  }
+
+}

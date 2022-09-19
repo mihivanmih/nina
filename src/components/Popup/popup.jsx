@@ -1,18 +1,23 @@
 import React from 'react'
 import style from './popup.module.scss'
-import Slider from '../slider/slider'
+import smile from '../../assets/img/smile.png'
+import close from '../../assets/img/close.png'
 
-const Popup = ({onShowHide}) => {
+const Popup = ({toggleValue}) => {
     return (
         <div className={style.popupShow}>
-            <div className={style.fon} onClick={() => onShowHide("onClose")}/>
+            <div className={style.fon} onClick={() => toggleValue(false)}/>
             <div className={style.popup}>
-                <div className={style.popupBlock}>
-                    <div className={style.leftBlock}>
-                        <div onClick={() => onShowHide("onShowHistory")} className={style.historyButton}>Рассказать историю</div>
-                        <div className={style.textButtom}>Откроем полную базу 3 октября!</div>
-                    </div>
-                    <div className={style.rightBlock}><Slider /></div>
+                <div className={style.close}>
+                    <img src={close} alt="close" onClick={() => toggleValue(false)}/>
+                </div>
+                <div className={style.img}>
+                    <img src={smile} alt="smile"/>
+                </div>
+                <div className={style.text}>
+                    <h1>СЕРВЕР ПЕРЕГРУЖЕН</h1>
+                    Попробуйте позже. Слишком много
+                    любовниц
                 </div>
             </div>
         </div>

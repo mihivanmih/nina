@@ -1,12 +1,17 @@
 import React from 'react'
-import { Popup } from '../../components'
-import styles from './header.scss'
+import styles from './header.module.scss'
 
-const Header = ({onShowHide}) => {
+const Header = () => {
     return (
         <>
-            <div className={"header"}>Любовницы.нет
-                <div onClick={ () => onShowHide("onShow")} className="click">Рассказать историю</div>
+            <div className={styles.header}>
+                <div className={styles.logo}>
+                    <a href={"/"}>Любовницы.нет</a>
+                </div>
+                <div className={styles.line} />
+                <div>
+                    ТЕ САМЫЕ «ПРОСТО ЗНАКОМЫЕ»
+                </div>
             </div>
         </>
     )

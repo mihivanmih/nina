@@ -1,12 +1,87 @@
+@import './fonst.scss';
+@import "variables.scss";
+
+body {
+  font-family: 'Proximanova', serif;
+}
+
 .App {
   background-image: url("../assets/img/fon.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Proximanova', serif;
   align-items: center;
   display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 120%;
+
+  @include _350 {
+    background-image: url("../assets/img/fon-mobile.jpg");
+    font-size: 21px;
+    line-height: 115%;
+    background-position: 46%;
+  }
+
+  @include _1170 {
+    background-image: url("../assets/img/fon.jpg");
+    font-size: 32px;
+    line-height: 120%;
+  }
+
+}
+
+h1 {
+  font-style: normal;
+  font-size: 80px;
+  line-height: 100%;
+  font-family: 'ProximanovaBlack', serif;
+  padding: 0;
+  margin: 0;
+
+  @include _350 {
+    font-size: 40px;
+  }
+
+  @include _1170 {
+    font-size: 80px;
+  }
+
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include _350 {
+    max-width: calc(100% - 50px);
+    padding: 25px 25px  0 25px;
+    align-items: end;
+  }
+
+  @include _1170 {
+    width: calc(100% - 50px);
+    max-width: 1200px;
+    padding: 0;
+    align-items: center;
+  }
+
+}
+
+.containerSlider {
+
+  @include _350 {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
 
 .click {
@@ -20,43 +95,254 @@
 
 
 .textIndex {
-  background: rgba(123, 127, 99, 0.5);
-  width: 30%;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 20px;
+  width: 55%;
   display: flex;
   align-items: center;
-  font-size: 20px;
-  position: relative;
   flex-wrap: wrap;
+  position: relative;
+
+  @include _350 {
+    width: 100%;
+    margin-bottom: 110px;
+  }
+
+  @include _1170 {
+    width: 55%;
+    margin-bottom: 0;
+  }
+
+  & h1 {
+    margin-bottom: 10px;
+  }
 
   & p {
-    width: 100%;
+    width: 85%;
+    padding: 0;
+    margin: 0 0 25px 0;
+
+    @include _350 {
+      margin: 0 0 10px 0;
+      color: rgba(255, 255, 255, 0.75);
+      width: 99%;
+    }
+
+    @include _768 {
+      margin: 0 0 25px 0;
+      color: #fff;
+      width: 85%;
+    }
+
   }
 
   & span {
     width: 100%;
     display: block;
-    text-align: right;
-    padding-right: 60px;
-  }
+    color: $color;
+    font-style: italic;
+    font-family: ProximanovaBold, serif;
+    margin-bottom: 70px;
 
-  & .loading {
-    position: absolute;
-    bottom: -85px;
-    background: #cd2b66;
-    border: 1px solid #6a1634;
-    padding: 20px;
-    left: 50%;
-    width: 300px;
-    margin-left: -175px;
-    cursor: pointer;
-
-    &:hover {
-      background: #bf2f62;
+    @include _350 {
+      font-size: 24px;
     }
 
+    @include _1170 {
+      font-size: 36px;
+    }
+
+  }
+}
+
+.bottomIndex {
+  background: #fbefe1;
+  overflow: hidden;
+
+  & .marqueeBlock {
+    padding: 115px 0;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 120%;
+    letter-spacing: 0.04em;
+    color: #006155;
+    font-family: Proximanova, serif;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: -12%;
+    width: 100%;
+
+    @include _350 {
+      font-size: 31px;
+      width: 112%;
+      padding: 50px 0;
+    }
+
+    @include _1170 {
+      font-size: 45px;
+      width: 100%;
+      margin-left: 0;
+      padding: 115px 0;
+    }
+
+    & .circle {
+      width: 17px;
+      height: 17px;
+      background: #006B5B;
+      border-radius: 100px;
+      margin: 0 10px;
+    }
+
+  }
+
+}
+
+
+.mobileDiv {
+  display: none;
+
+  @include _350 {
+    background: #006A5E;
+    width: calc(100% - 50px);
+    position: absolute;
+    bottom: 0px;
+    padding: 35px 25px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+
+    & .loading {
+      display: block;
+      max-width: 270px;
+    }
+  }
+
+  @include _768{
+    display: none;
+  }
+
+}
+
+
+
+
+
+.loading {
+  background: $color;
+  color: #2F3032;
+  padding: 20px 27px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: ProximanovaBold, serif;
+  border-radius: 100px;
+
+  @include _350 {
+    display: none;
+    padding: 20px 21px;
+  }
+
+  @include _1170 {
+    display: block;
+    padding: 20px 27px;
+  }
+
+  &:hover {
+    background: #f5cd77;
+  }
+
+}
+
+.loadingPl {
+  @include _768 {
+    display: block;
+    padding: 20px 21px;
+  }
+}
+
+
+.loadingMobile {
+  background: $color;
+  color: #2F3032;
+  padding: 20px 27px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: ProximanovaBold, serif;
+  border-radius: 100px;
+  max-width: 266px;
+  width: 100%;
+  text-align: center;
+  margin: 60px auto 0;
+
+  @include _768 {
+    margin: 0 auto 0;
+  }
+
+  @include _1170 {
+    display: none;
+  }
+
+}
+
+
+.sliderBlockTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 140px;
+  margin-bottom: 75px;
+  width: 100%;
+
+  @include _350 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  @include _1170 {
+    margin-top: 140px;
+    margin-bottom: 75px;
+  }
+
+  & .titleSlider {
+    font-size: 50px;
+    line-height: 61px;
+    font-family: ProximanovaBlack, serif;
+    color: #006155;
+    text-transform: uppercase;
+
+    @include _350 {
+      font-size: 32px;
+      line-height: 100%;
+    }
+
+    @include _1170 {
+      font-size: 50px;
+      line-height: 61px;
+    }
+
+  }
+}
+
+.sliderBlock {
+  max-width: 1200px;
+  width: 100%;
+  height: 450px;
+  position: relative;
+  right: 0;
+
+  @media (min-width: 320px){
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  @include _768 {
+    height: 555px;
+  }
+
+  @media (min-width: 800px){
+    max-width: 800px;
+  }
+
+  @media (min-width: 1200px){
+    max-width: 1200px;
+    height: 450px;
   }
 
 }
